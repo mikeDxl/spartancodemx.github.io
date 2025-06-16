@@ -1,1301 +1,1649 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spartan Code MX - Soluciones Tecnológicas de Élite</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        :root {
-            --spartan-gold: #d4af37;
-            --spartan-dark: #1a1a1a;
-            --spartan-green: #00ff88;
-            --spartan-bronze: #cd7f32;
-            --spartan-gray: #2d2d2d;
-            --text-light: #f8f9fa;
-            --gradient-primary: linear-gradient(135deg, #d4af37 0%, #cd7f32 100%);
-            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        }
+      :root {
+        --spartan-gold: #d4af37;
+        --spartan-dark: #1a1a1a;
+        --spartan-green: #00ff88;
+        --spartan-bronze: #cd7f32;
+        --spartan-gray: #2d2d2d;
+        --text-light: #f8f9fa;
+        --gradient-primary: linear-gradient(135deg, #d4af37 0%, #cd7f32 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--gradient-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--gradient-dark);
+        color: var(--text-light);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
 
-        .spartan-font {
-            font-family: 'Orbitron', monospace;
-        }
+      .spartan-font {
+        font-family: "Orbitron", monospace;
+      }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: var(--spartan-dark);
-        }
+      ::-webkit-scrollbar-track {
+        background: var(--spartan-dark);
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--spartan-gold);
-            border-radius: 4px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: var(--spartan-gold);
+        border-radius: 4px;
+      }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--spartan-bronze);
-        }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--spartan-bronze);
+      }
 
-        /* Navigation */
-        .navbar {
-            background: rgba(26, 26, 26, 0.95) !important;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 1rem 0;
-        }
+      /* Navigation */
+      .navbar {
+        background: rgba(26, 26, 26, 0.95) !important;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        padding: 1rem 0;
+      }
 
-        .navbar.scrolled {
-            background: rgba(26, 26, 26, 0.98) !important;
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 30px rgba(212, 175, 55, 0.1);
-        }
+      .navbar.scrolled {
+        background: rgba(26, 26, 26, 0.98) !important;
+        padding: 0.5rem 0;
+        box-shadow: 0 2px 30px rgba(212, 175, 55, 0.1);
+      }
 
-        .navbar-brand {
-            font-family: 'Orbitron', monospace;
-            font-weight: 900;
-            color: var(--spartan-gold) !important;
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-        }
+      .navbar-brand {
+        font-family: "Orbitron", monospace;
+        font-weight: 900;
+        color: var(--spartan-gold) !important;
+        font-size: 1.8rem;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      }
 
-        .navbar-nav .nav-link {
-            color: var(--text-light) !important;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-            margin: 0 10px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
+      .navbar-nav .nav-link {
+        color: var(--text-light) !important;
+        font-weight: 500;
+        position: relative;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--spartan-gold) !important;
-        }
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: var(--spartan-gold) !important;
+      }
 
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: var(--spartan-gold);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background: var(--spartan-gold);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
 
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
-        }
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        width: 100%;
+      }
 
-        /* Hero Section */
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(212, 175, 55, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 255, 136, 0.05) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(26, 26, 26, 0.9) 0%,
+            rgba(45, 45, 45, 0.9) 100%
+          );
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        animation: heroGrid 20s linear infinite;
+      }
+
+      @keyframes heroGrid {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(20px, 20px);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-family: "Orbitron", monospace;
+        font-weight: 900;
+        font-size: clamp(3rem, 8vw, 6rem);
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        animation: titleGlow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes titleGlow {
+        from {
+          filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        }
+        to {
+          filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+        }
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        color: var(--spartan-green);
+        margin-bottom: 2rem;
+        font-weight: 300;
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        color: rgba(248, 249, 250, 0.8);
+        margin-bottom: 3rem;
+        max-width: 600px;
+      }
+
+      .btn-spartan {
+        background: var(--gradient-primary);
+        border: none;
+        padding: 18px 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-spartan:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+        filter: brightness(1.1);
+      }
+
+      .btn-spartan::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-spartan:hover::before {
+        left: 100%;
+      }
+
+      /* Logo Display */
+      .logo-container {
+        position: relative;
+        width: clamp(300px, 40vw, 500px);
+        height: clamp(300px, 40vw, 500px);
+        margin: 0 auto;
+      }
+
+      .logo-display-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: logoFloat 4s ease-in-out infinite;
+      }
+
+      .spartan-logo-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+        transition: all 0.3s ease;
+      }
+
+      .spartan-logo-img:hover {
+        filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
+        transform: scale(1.05);
+      }
+
+      @keyframes logoFloat {
+        0%,
+        100% {
+          transform: translateY(0px);
+          filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+        }
+        50% {
+          transform: translateY(-20px);
+          filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.5));
+        }
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section:first-of-type,
+      .about-section {
+        padding-top: 260px;
+      }
+
+      .section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--spartan-gold),
+          transparent
+        );
+      }
+
+      .section-title {
+        font-family: "Orbitron", monospace;
+        font-weight: 700;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 4rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.2;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      /* About Section */
+      .about-section {
+        background: rgba(0, 0, 0, 0.2);
+        margin-top: 60px;
+        position: relative;
+      }
+
+      .about-section::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+      }
+
+      .mission-vision-card {
+        background: rgba(26, 26, 26, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 20px;
+        padding: 3rem;
+        height: 100%;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mission-vision-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .mission-vision-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--spartan-gold);
+        box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2);
+      }
+
+      .mission-vision-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card-icon {
+        font-size: 4rem;
+        color: var(--spartan-gold);
+        margin-bottom: 2rem;
+        display: block;
+        text-align: center;
+      }
+
+      .card-title {
+        font-family: "Orbitron", monospace;
+        font-size: 2rem;
+        color: var(--spartan-gold);
+        text-align: center;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Arquetipo Section */
+      .arquetipo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .arquetipo-item {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(26, 26, 26, 0.6);
+        border-radius: 15px;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .arquetipo-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .arquetipo-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--spartan-gold);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+      }
+
+      .arquetipo-item:hover::before {
+        left: 100%;
+      }
+
+      .arquetipo-icon {
+        font-size: 3rem;
+        color: var(--spartan-gold);
+        margin-bottom: 1rem;
+      }
+
+      /* Services Section */
+      .services-section {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card {
+        background: rgba(26, 26, 26, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 20px;
+        padding: 2.5rem;
+        height: 100%;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(212, 175, 55, 0.05) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: var(--spartan-gold);
+        box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+      }
+
+      .service-card:hover::before {
+        opacity: 1;
+      }
+
+      .service-icon {
+        font-size: 4rem;
+        color: var(--spartan-gold);
+        margin-bottom: 1.5rem;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
+        color: var(--spartan-green);
+      }
+
+      .service-title {
+        font-family: "Orbitron", monospace;
+        font-size: 1.5rem;
+        color: var(--spartan-gold);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      .service-features {
+        list-style: none;
+        padding: 0;
+      }
+
+      .service-features li {
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .service-features li::before {
+        content: "⚔️";
+        position: absolute;
+        left: 0;
+        color: var(--spartan-gold);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: radial-gradient(
+            circle at 30% 70%,
+            rgba(212, 175, 55, 0.1) 0%,
+            transparent 50%
+          ),
+          rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-card {
+        background: rgba(26, 26, 26, 0.9);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 25px;
+        padding: 3rem;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .form-control {
+        background: rgba(45, 45, 45, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        color: var(--text-light);
+        border-radius: 10px;
+        padding: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        background: rgba(45, 45, 45, 0.9);
+        border-color: var(--spartan-gold);
+        color: var(--text-light);
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+      }
+
+      .form-label {
+        color: var(--spartan-gold);
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(45, 45, 45, 0.3);
+        border-radius: 15px;
+        border-left: 4px solid var(--spartan-gold);
+        transition: all 0.3s ease;
+      }
+
+      .contact-info-item:hover {
+        transform: translateX(10px);
+        background: rgba(45, 45, 45, 0.5);
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        color: var(--spartan-gold);
+        margin-right: 1.5rem;
+        min-width: 50px;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--spartan-dark);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 3rem 0 1rem;
+        position: relative;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gradient-primary);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .social-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--spartan-gold);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .social-icon:hover {
+        background: var(--spartan-gold);
+        color: var(--spartan-dark);
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .hero {
-            min-height: 100vh;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 45, 45, 0.9) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: heroGrid 20s linear infinite;
-        }
-
-        @keyframes heroGrid {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(20px, 20px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+          text-align: center;
+          padding: 2rem 0;
         }
 
         .hero-title {
-            font-family: 'Orbitron', monospace;
-            font-weight: 900;
-            font-size: clamp(3rem, 8vw, 6rem);
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            animation: titleGlow 3s ease-in-out infinite alternate;
+          font-size: 3rem;
         }
 
-        @keyframes titleGlow {
-            from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-            to { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6)); }
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--spartan-green);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: rgba(248, 249, 250, 0.8);
-            margin-bottom: 3rem;
-            max-width: 600px;
-        }
-
-        .btn-spartan {
-            background: var(--gradient-primary);
-            border: none;
-            padding: 18px 40px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1rem;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-spartan:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
-            filter: brightness(1.1);
-        }
-
-        .btn-spartan::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-spartan:hover::before {
-            left: 100%;
-        }
-
-        /* Logo Display */
-        .logo-container {
-            position: relative;
-            width: clamp(300px, 40vw, 500px);
-            height: clamp(300px, 40vw, 500px);
-            margin: 0 auto;
-        }
-
-        .logo-display-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            animation: logoFloat 4s ease-in-out infinite;
-        }
-
-        .spartan-logo-img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
-            transition: all 0.3s ease;
-        }
-
-        .spartan-logo-img:hover {
-            filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
-            transform: scale(1.05);
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { 
-                transform: translateY(0px);
-                filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
-            }
-            50% { 
-                transform: translateY(-20px);
-                filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.5));
-            }
-        }
-
-        /* Section Styles */
         .section {
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
+          padding: 80px 0;
         }
 
         .section:first-of-type,
         .about-section {
-            padding-top: 260px;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--spartan-gold), transparent);
+          padding-top: 100px;
         }
 
         .section-title {
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            text-align: center;
-            margin-bottom: 4rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-            line-height: 1.2;
+          font-size: 2rem;
+          line-height: 1.3;
+          margin-bottom: 3rem;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about-section {
-            background: rgba(0, 0, 0, 0.2);
-            margin-top: 60px;
-            position: relative;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
-        }
-
-        .mission-vision-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
-            padding: 3rem;
-            height: 100%;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mission-vision-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .mission-vision-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--spartan-gold);
-            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2);
-        }
-
-        .mission-vision-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-icon {
-            font-size: 4rem;
-            color: var(--spartan-gold);
-            margin-bottom: 2rem;
-            display: block;
-            text-align: center;
-        }
-
-        .card-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 2rem;
-            color: var(--spartan-gold);
-            text-align: center;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Arquetipo Section */
-        .arquetipo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .arquetipo-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(26, 26, 26, 0.6);
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .arquetipo-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .arquetipo-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--spartan-gold);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .arquetipo-item:hover::before {
-            left: 100%;
-        }
-
-        .arquetipo-icon {
-            font-size: 3rem;
-            color: var(--spartan-gold);
-            margin-bottom: 1rem;
-        }
-
-        /* Services Section */
-        .services-section {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            height: 100%;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: var(--spartan-gold);
-            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            color: var(--spartan-gold);
-            margin-bottom: 1.5rem;
-            display: block;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            color: var(--spartan-green);
-        }
-
-        .service-title {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.5rem;
-            color: var(--spartan-gold);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .service-features li::before {
-            content: '⚔️';
-            position: absolute;
-            left: 0;
-            color: var(--spartan-gold);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                rgba(0, 0, 0, 0.3);
-        }
-
+        .mission-vision-card,
         .contact-card {
-            background: rgba(26, 26, 26, 0.9);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 25px;
-            padding: 3rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          padding: 2rem;
         }
 
-        .form-control {
-            background: rgba(45, 45, 45, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            color: var(--text-light);
-            border-radius: 10px;
-            padding: 1rem;
-            transition: all 0.3s ease;
+        .navbar-nav {
+          text-align: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section {
+          padding: 60px 0;
         }
 
-        .form-control:focus {
-            background: rgba(45, 45, 45, 0.9);
-            border-color: var(--spartan-gold);
-            color: var(--text-light);
-            box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+        .section:first-of-type,
+        .about-section {
+          padding-top: 80px;
         }
 
-        .form-label {
-            color: var(--spartan-gold);
-            font-weight: 600;
-            margin-bottom: 0.8rem;
+        .about-section {
+          margin-top: 40px;
         }
 
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(45, 45, 45, 0.3);
-            border-radius: 15px;
-            border-left: 4px solid var(--spartan-gold);
-            transition: all 0.3s ease;
+        .section-title {
+          font-size: 1.8rem;
+          line-height: 1.4;
+          padding: 0 1rem;
         }
 
-        .contact-info-item:hover {
-            transform: translateX(10px);
-            background: rgba(45, 45, 45, 0.5);
+        .hero-title {
+          font-size: 2.5rem;
         }
 
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--spartan-gold);
-            margin-right: 1.5rem;
-            min-width: 50px;
+        .service-card,
+        .mission-vision-card {
+          margin-bottom: 2rem;
         }
+      }
 
-        /* Footer */
-        .footer {
-            background: var(--spartan-dark);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 3rem 0 1rem;
-            position: relative;
-        }
+      /* Scroll animations */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--gradient-primary);
-        }
+      .fade-up.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
+      .fade-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.6s ease;
+      }
 
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--spartan-gold);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
+      .fade-left.aos-animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-        .social-icon:hover {
-            background: var(--spartan-gold);
-            color: var(--spartan-dark);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-        }
+      .fade-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.6s ease;
+      }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero {
-                text-align: center;
-                padding: 2rem 0;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-            
-            .section:first-of-type,
-            .about-section {
-                padding-top: 100px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-                line-height: 1.3;
-                margin-bottom: 3rem;
-            }
-            
-            .mission-vision-card,
-            .contact-card {
-                padding: 2rem;
-            }
-            
-            .navbar-nav {
-                text-align: center;
-                margin-top: 1rem;
-            }
-        }
+      .fade-right.aos-animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-        @media (max-width: 576px) {
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section:first-of-type,
-            .about-section {
-                padding-top: 80px;
-            }
-            
-            .about-section {
-                margin-top: 40px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                line-height: 1.4;
-                padding: 0 1rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .service-card,
-            .mission-vision-card {
-                margin-bottom: 2rem;
-            }
-        }
+      .scale-up {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s ease;
+      }
 
-        /* Scroll animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-up.aos-animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-left.aos-animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .fade-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-right.aos-animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scale-up {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s ease;
-        }
-
-        .scale-up.aos-animate {
-            opacity: 1;
-            transform: scale(1);
-        }
+      .scale-up.aos-animate {
+        opacity: 1;
+        transform: scale(1);
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-shield-alt me-2"></i>SPARTAN CODE MX
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <i class="fas fa-shield-alt me-2"></i>SPARTAN CODE MX
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contacto</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="hero-title">SPARTAN<br>CODE</h1>
-                    <p class="hero-subtitle spartan-font">Soluciones Tecnológicas de Élite</p>
-                    <p class="hero-description">
-                        Forjamos sistemas y herramientas web con la disciplina de los espartanos 
-                        y la innovación del futuro. Transformamos desafíos tecnológicos en victorias digitales.
-                    </p>
-                    <a href="#services" class="btn btn-spartan btn-lg">
-                        <i class="fas fa-rocket me-2"></i>Descubre Nuestro Arsenal
-                    </a>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="logo-container">
-                        <div class="logo-display-container">
-                            <img src="img/logoPrevPNG.png" alt="Spartan Code MX Logo" class="spartan-logo-img">
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div
+            class="col-lg-6 hero-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <h1 class="hero-title">SPARTAN<br />CODE</h1>
+            <p class="hero-subtitle spartan-font">
+              Soluciones Tecnológicas de Élite
+            </p>
+            <p class="hero-description">
+              Forjamos sistemas y herramientas web con la disciplina de los
+              espartanos y la innovación del futuro. Transformamos desafíos
+              tecnológicos en victorias digitales.
+            </p>
+            <a href="#services" class="btn btn-spartan btn-lg">
+              <i class="fas fa-rocket me-2"></i>Descubre Nuestro Arsenal
+            </a>
+          </div>
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="logo-container">
+              <div class="logo-display-container">
+                <img
+                  src="img/logoPrevPNG.png"
+                  alt="Spartan Code MX Logo"
+                  class="spartan-logo-img"
+                />
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    
     <!-- About Section -->
     <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Nuestra Esencia Guerrera</h2>
-            
-            <!-- Misión y Visión -->
-            <div class="row mb-5">
-                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mission-vision-card">
-                        <i class="fas fa-bullseye card-icon"></i>
-                        <h3 class="card-title">Misión</h3>
-                        <p class="text-center">
-                            Forjar soluciones tecnológicas robustas e innovadoras que impulsen el crecimiento 
-                            empresarial en México, aplicando la disciplina espartana y la precisión militar 
-                            en cada línea de código, cada sistema y cada herramienta web que desarrollamos.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mission-vision-card">
-                        <i class="fas fa-eye card-icon"></i>
-                        <h3 class="card-title">Visión</h3>
-                        <p class="text-center">
-                            Convertirnos en la falange tecnológica líder de México, reconocida por la 
-                            excelencia, innovación y confiabilidad de nuestros sistemas, estableciendo 
-                            el estándar dorado en desarrollo web y automatización empresarial.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Nuestra Esencia Guerrera
+        </h2>
 
-            <!-- Arquetipo Espartano -->
-            <div class="row" data-aos="fade-up" data-aos-delay="300">
-                <div class="col-12">
-                    <h3 class="spartan-font text-center mb-4" style="color: var(--spartan-gold); font-size: 2.5rem;">
-                        NUESTRO CÓDIGO ESPARTANO
-                    </h3>
-                    <div class="arquetipo-grid">
-                        <div class="arquetipo-item" data-aos="scale-up" data-aos-delay="100">
-                            <i class="fas fa-shield-alt arquetipo-icon"></i>
-                            <h4 class="spartan-font" style="color: var(--spartan-gold);">PROTECCIÓN</h4>
-                            <p>Sistemas seguros y blindados contra amenazas digitales</p>
-                        </div>
-                        <div class="arquetipo-item" data-aos="scale-up" data-aos-delay="200">
-                            <i class="fas fa-sword arquetipo-icon"></i>
-                            <h4 class="spartan-font" style="color: var(--spartan-gold);">PRECISIÓN</h4>
-                            <p>Código limpio, eficiente y ejecutado con exactitud militar</p>
-                        </div>
-                        <div class="arquetipo-item" data-aos="scale-up" data-aos-delay="300">
-                            <i class="fas fa-trophy arquetipo-icon"></i>
-                            <h4 class="spartan-font" style="color: var(--spartan-gold);">EXCELENCIA</h4>
-                            <p>Calidad suprema sin concesiones ni compromisos</p>
-                        </div>
-                        <div class="arquetipo-item" data-aos="scale-up" data-aos-delay="400">
-                            <i class="fas fa-users arquetipo-icon"></i>
-                            <h4 class="spartan-font" style="color: var(--spartan-gold);">HERMANDAD</h4>
-                            <p>Lealtad absoluta y compromiso inquebrantable con nuestros aliados</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Misión y Visión -->
+        <div class="row mb-5">
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="mission-vision-card">
+              <i class="fas fa-bullseye card-icon"></i>
+              <h3 class="card-title">Misión</h3>
+              <p class="text-center">
+                Forjar soluciones tecnológicas robustas e innovadoras que
+                impulsen el crecimiento empresarial en México, aplicando la
+                disciplina espartana y la precisión militar en cada línea de
+                código, cada sistema y cada herramienta web que desarrollamos.
+              </p>
             </div>
+          </div>
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="mission-vision-card">
+              <i class="fas fa-eye card-icon"></i>
+              <h3 class="card-title">Visión</h3>
+              <p class="text-center">
+                Convertirnos en la falange tecnológica líder de México,
+                reconocida por la excelencia, innovación y confiabilidad de
+                nuestros sistemas, estableciendo el estándar dorado en
+                desarrollo web y automatización empresarial.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- Arquetipo Espartano -->
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-12">
+            <h3
+              class="spartan-font text-center mb-4"
+              style="color: var(--spartan-gold); font-size: 2.5rem"
+            >
+              NUESTRO CÓDIGO ESPARTANO
+            </h3>
+            <div class="arquetipo-grid">
+              <div
+                class="arquetipo-item"
+                data-aos="scale-up"
+                data-aos-delay="100"
+              >
+                <i class="fas fa-shield-alt arquetipo-icon"></i>
+                <h4 class="spartan-font" style="color: var(--spartan-gold)">
+                  PROTECCIÓN
+                </h4>
+                <p>Sistemas seguros y blindados contra amenazas digitales</p>
+              </div>
+              <div
+                class="arquetipo-item"
+                data-aos="scale-up"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-sword arquetipo-icon"></i>
+                <h4 class="spartan-font" style="color: var(--spartan-gold)">
+                  PRECISIÓN
+                </h4>
+                <p>
+                  Código limpio, eficiente y ejecutado con exactitud militar
+                </p>
+              </div>
+              <div
+                class="arquetipo-item"
+                data-aos="scale-up"
+                data-aos-delay="300"
+              >
+                <i class="fas fa-trophy arquetipo-icon"></i>
+                <h4 class="spartan-font" style="color: var(--spartan-gold)">
+                  EXCELENCIA
+                </h4>
+                <p>Calidad suprema sin concesiones ni compromisos</p>
+              </div>
+              <div
+                class="arquetipo-item"
+                data-aos="scale-up"
+                data-aos-delay="400"
+              >
+                <i class="fas fa-users arquetipo-icon"></i>
+                <h4 class="spartan-font" style="color: var(--spartan-gold)">
+                  HERMANDAD
+                </h4>
+                <p>
+                  Lealtad absoluta y compromiso inquebrantable con nuestros
+                  aliados
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="section services-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Arsenal Tecnológico</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100" style="font-size: 1.2rem; color: rgba(248, 249, 250, 0.8);">
-                Nuestras armas digitales para conquistar cualquier desafío tecnológico
-            </p>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <i class="fas fa-code service-icon"></i>
-                        <h4 class="service-title">Desarrollo Web</h4>
-                        <p class="text-center mb-4">
-                            Sitios web y aplicaciones de alto rendimiento construidos con arquitectura militar. 
-                            Desde landing pages hasta plataformas empresariales complejas.
-                        </p>
-                        <ul class="service-features">
-                            <li>React, Vue.js & Angular</li>
-                            <li>Node.js & Python Backend</li>
-                            <li>Diseño Responsivo Total</li>
-                            <li>SEO & Performance Optimizado</li>
-                            <li>Progressive Web Apps (PWA)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <i class="fas fa-cogs service-icon"></i>
-                        <h4 class="service-title">Sistemas ERP/CRM</h4>
-                        <p class="text-center mb-4">
-                            Plataformas de gestión empresarial a medida que unifican y optimizan 
-                            todos los procesos de tu organización bajo un solo comando.
-                        </p>
-                        <ul class="service-features">
-                            <li>CRM Personalizado</li>
-                            <li>Gestión de Inventarios</li>
-                            <li>Control de Ventas</li>
-                            <li>Reportes Inteligentes</li>
-                            <li>Integración Contable</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <i class="fas fa-robot service-icon"></i>
-                        <h4 class="service-title">Automatización IA</h4>
-                        <p class="text-center mb-4">
-                            Bots inteligentes y sistemas de automatización que liberan a tu equipo 
-                            de tareas repetitivas y optimizan la productividad empresarial.
-                        </p>
-                        <ul class="service-features">
-                            <li>Chatbots con IA</li>
-                            <li>RPA (Robotic Process Automation)</li>
-                            <li>Análisis Predictivo</li>
-                            <li>Workflows Automáticos</li>
-                            <li>Machine Learning</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <i class="fas fa-mobile-alt service-icon"></i>
-                        <h4 class="service-title">Apps Móviles</h4>
-                        <p class="text-center mb-4">
-                            Aplicaciones nativas y multiplataforma que extienden tu presencia 
-                            digital al campo de batalla móvil con experiencias excepcionales.
-                        </p>
-                        <ul class="service-features">
-                            <li>iOS & Android Nativo</li>
-                            <li>React Native & Flutter</li>
-                            <li>UI/UX Optimizado</li>
-                            <li>Integración con APIs</li>
-                            <li>Push Notifications</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <i class="fas fa-shield-alt service-icon"></i>
-                        <h4 class="service-title">Ciberseguridad</h4>
-                        <p class="text-center mb-4">
-                            Fortificación digital completa para proteger tu empresa de amenazas 
-                            cibernéticas con las mejores prácticas de seguridad militar.
-                        </p>
-                        <ul class="service-features">
-                            <li>Auditorías de Seguridad</li>
-                            <li>Penetration Testing</li>
-                            <li>Encriptación Avanzada</li>
-                            <li>Monitoreo 24/7</li>
-                            <li>Compliance & Certificaciones</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <i class="fas fa-cloud service-icon"></i>
-                        <h4 class="service-title">Cloud Solutions</h4>
-                        <p class="text-center mb-4">
-                            Migración y optimización en la nube con arquitecturas escalables 
-                            que crecen con tu empresa y garantizan disponibilidad total.
-                        </p>
-                        <ul class="service-features">
-                            <li>AWS, Azure & Google Cloud</li>
-                            <li>DevOps & CI/CD</li>
-                            <li>Microservicios</li>
-                            <li>Auto-scaling</li>
-                            <li>Disaster Recovery</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Arsenal Tecnológico</h2>
+        <p
+          class="text-center mb-5"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          style="font-size: 1.2rem; color: rgba(248, 249, 250, 0.8)"
+        >
+          Nuestras armas digitales para conquistar cualquier desafío tecnológico
+        </p>
+
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <i class="fas fa-code service-icon"></i>
+              <h4 class="service-title">Desarrollo Web</h4>
+              <p class="text-center mb-4">
+                Sitios web y aplicaciones de alto rendimiento construidos con
+                arquitectura militar. Desde landing pages hasta plataformas
+                empresariales complejas.
+              </p>
+              <ul class="service-features">
+                <li>React, Vue.js & Angular</li>
+                <li>Node.js & Python Backend</li>
+                <li>Diseño Responsivo Total</li>
+                <li>SEO & Performance Optimizado</li>
+                <li>Progressive Web Apps (PWA)</li>
+              </ul>
             </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <i class="fas fa-cogs service-icon"></i>
+              <h4 class="service-title">Sistemas ERP/CRM</h4>
+              <p class="text-center mb-4">
+                Plataformas de gestión empresarial a medida que unifican y
+                optimizan todos los procesos de tu organización bajo un solo
+                comando.
+              </p>
+              <ul class="service-features">
+                <li>CRM Personalizado</li>
+                <li>Gestión de Inventarios</li>
+                <li>Control de Ventas</li>
+                <li>Reportes Inteligentes</li>
+                <li>Integración Contable</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <i class="fas fa-robot service-icon"></i>
+              <h4 class="service-title">Automatización IA</h4>
+              <p class="text-center mb-4">
+                Bots inteligentes y sistemas de automatización que liberan a tu
+                equipo de tareas repetitivas y optimizan la productividad
+                empresarial.
+              </p>
+              <ul class="service-features">
+                <li>Chatbots con IA</li>
+                <li>RPA (Robotic Process Automation)</li>
+                <li>Análisis Predictivo</li>
+                <li>Workflows Automáticos</li>
+                <li>Machine Learning</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <i class="fas fa-mobile-alt service-icon"></i>
+              <h4 class="service-title">Apps Móviles</h4>
+              <p class="text-center mb-4">
+                Aplicaciones nativas y multiplataforma que extienden tu
+                presencia digital al campo de batalla móvil con experiencias
+                excepcionales.
+              </p>
+              <ul class="service-features">
+                <li>iOS & Android Nativo</li>
+                <li>React Native & Flutter</li>
+                <li>UI/UX Optimizado</li>
+                <li>Integración con APIs</li>
+                <li>Push Notifications</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <i class="fas fa-shield-alt service-icon"></i>
+              <h4 class="service-title">Ciberseguridad</h4>
+              <p class="text-center mb-4">
+                Fortificación digital completa para proteger tu empresa de
+                amenazas cibernéticas con las mejores prácticas de seguridad
+                militar.
+              </p>
+              <ul class="service-features">
+                <li>Auditorías de Seguridad</li>
+                <li>Penetration Testing</li>
+                <li>Encriptación Avanzada</li>
+                <li>Monitoreo 24/7</li>
+                <li>Compliance & Certificaciones</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <i class="fas fa-cloud service-icon"></i>
+              <h4 class="service-title">Cloud Solutions</h4>
+              <p class="text-center mb-4">
+                Migración y optimización en la nube con arquitecturas escalables
+                que crecen con tu empresa y garantizan disponibilidad total.
+              </p>
+              <ul class="service-features">
+                <li>AWS, Azure & Google Cloud</li>
+                <li>DevOps & CI/CD</li>
+                <li>Microservicios</li>
+                <li>Auto-scaling</li>
+                <li>Disaster Recovery</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Convócanos a la Batalla</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100" style="font-size: 1.2rem; color: rgba(248, 249, 250, 0.8);">
-                Únete a nuestra falange tecnológica y conquistemos juntos los desafíos digitales
-            </p>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h3 class="spartan-font mb-4" style="color: var(--spartan-gold);">
-                                    <i class="fas fa-scroll me-2"></i>Envía tu Mensaje
-                                </h3>
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Nombre del Guerrero</label>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email de Contacto</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="company" class="form-label">Empresa/Organización</label>
-                                        <input type="text" class="form-control" id="company">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="service" class="form-label">Servicio de Interés</label>
-                                        <select class="form-control" id="service">
-                                            <option value="">Selecciona un servicio</option>
-                                            <option value="web">Desarrollo Web</option>
-                                            <option value="erp">Sistemas ERP/CRM</option>
-                                            <option value="ia">Automatización IA</option>
-                                            <option value="mobile">Apps Móviles</option>
-                                            <option value="security">Ciberseguridad</option>
-                                            <option value="cloud">Cloud Solutions</option>
-                                            <option value="custom">Proyecto Personalizado</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="message" class="form-label">Describe tu Misión</label>
-                                        <textarea class="form-control" id="message" rows="4" required 
-                                                placeholder="Cuéntanos sobre el desafío que quieres conquistar..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-spartan w-100">
-                                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje de Guerra
-                                    </button>
-                                </form>
-                            </div>
-                            
-                            <div class="col-lg-6 ps-lg-5">
-                                <h3 class="spartan-font mb-4" style="color: var(--spartan-gold);">
-                                    <i class="fas fa-fortress me-2"></i>Nuestro Cuartel
-                                </h3>
-                                
-                                <div class="contact-info-item" data-aos="fade-left" data-aos-delay="100">
-                                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                                    <div>
-                                        <h6 class="mb-1" style="color: var(--spartan-gold);">Base de Operaciones</h6>
-                                        <p class="mb-0">Ciudad de México, México<br>Zona Metropolitana</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-info-item" data-aos="fade-left" data-aos-delay="200">
-                                    <i class="fas fa-phone contact-icon"></i>
-                                    <div>
-                                        <h6 class="mb-1" style="color: var(--spartan-gold);">Línea de Combate</h6>
-                                        <p class="mb-0">+52 (55) 1234-5678<br>Disponible 24/7 para emergencias</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-info-item" data-aos="fade-left" data-aos-delay="300">
-                                    <i class="fas fa-envelope contact-icon"></i>
-                                    <div>
-                                        <h6 class="mb-1" style="color: var(--spartan-gold);">Comunicación Digital</h6>
-                                        <p class="mb-0">info@spartancodemx.com<br>contacto@spartancodemx.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-info-item" data-aos="fade-left" data-aos-delay="400">
-                                    <i class="fas fa-clock contact-icon"></i>
-                                    <div>
-                                        <h6 class="mb-1" style="color: var(--spartan-gold);">Horario de Batalla</h6>
-                                        <p class="mb-0">Lunes - Viernes: 8:00 - 20:00<br>Sábados: 9:00 - 15:00</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-4 p-3" style="background: rgba(212, 175, 55, 0.1); border-radius: 15px; border-left: 4px solid var(--spartan-gold);">
-                                    <h6 style="color: var(--spartan-gold);"><i class="fas fa-rocket me-2"></i>Respuesta Rápida</h6>
-                                    <p class="mb-0 small">Respondemos en menos de 2 horas durante horario laboral. 
-                                    Para emergencias críticas, contáctanos por WhatsApp.</p>
-                                </div>
-                            </div>
-                        </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Convócanos a la Batalla
+        </h2>
+        <p
+          class="text-center mb-5"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          style="font-size: 1.2rem; color: rgba(248, 249, 250, 0.8)"
+        >
+          Únete a nuestra falange tecnológica y conquistemos juntos los desafíos
+          digitales
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-6">
+                  <h3
+                    class="spartan-font mb-4"
+                    style="color: var(--spartan-gold)"
+                  >
+                    <i class="fas fa-scroll me-2"></i>Envía tu Mensaje
+                  </h3>
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label"
+                        >Nombre del Guerrero</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                      />
                     </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label"
+                        >Email de Contacto</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="company" class="form-label"
+                        >Empresa/Organización</label
+                      >
+                      <input type="text" class="form-control" id="company" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="service" class="form-label"
+                        >Servicio de Interés</label
+                      >
+                      <select class="form-control" id="service">
+                        <option value="">Selecciona un servicio</option>
+                        <option value="web">Desarrollo Web</option>
+                        <option value="erp">Sistemas ERP/CRM</option>
+                        <option value="ia">Automatización IA</option>
+                        <option value="mobile">Apps Móviles</option>
+                        <option value="security">Ciberseguridad</option>
+                        <option value="cloud">Cloud Solutions</option>
+                        <option value="custom">Proyecto Personalizado</option>
+                      </select>
+                    </div>
+                    <div class="mb-4">
+                      <label for="message" class="form-label"
+                        >Describe tu Misión</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        rows="4"
+                        required
+                        placeholder="Cuéntanos sobre el desafío que quieres conquistar..."
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-spartan w-100">
+                      <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje de
+                      Guerra
+                    </button>
+                  </form>
                 </div>
+
+                <div class="col-lg-6 ps-lg-5">
+                  <h3
+                    class="spartan-font mb-4"
+                    style="color: var(--spartan-gold)"
+                  >
+                    <i class="fas fa-fortress me-2"></i>Nuestro Cuartel
+                  </h3>
+
+                  <div
+                    class="contact-info-item"
+                    data-aos="fade-left"
+                    data-aos-delay="100"
+                  >
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div>
+                      <h6 class="mb-1" style="color: var(--spartan-gold)">
+                        Base de Operaciones
+                      </h6>
+                      <p class="mb-0">
+                        Cuernavaca, Morelos, México
+                        <!-- <br />Zona Metropolitana -->
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="contact-info-item"
+                    data-aos="fade-left"
+                    data-aos-delay="200"
+                  >
+                    <i class="fas fa-phone contact-icon"></i>
+                    <div>
+                      <h6 class="mb-1" style="color: var(--spartan-gold)">
+                        Línea de Combate
+                      </h6>
+                      <p class="mb-0">
+                        +52 (220) 167-0002<br />Disponible 24/7 para emergencias
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="contact-info-item"
+                    data-aos="fade-left"
+                    data-aos-delay="300"
+                  >
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div>
+                      <h6 class="mb-1" style="color: var(--spartan-gold)">
+                        Comunicación Digital
+                      </h6>
+                      <p class="mb-0">
+                        spartancodemx@gmail.com
+                        <!-- <br />contacto@spartancodemx.com -->
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="contact-info-item"
+                    data-aos="fade-left"
+                    data-aos-delay="400"
+                  >
+                    <i class="fas fa-clock contact-icon"></i>
+                    <div>
+                      <h6 class="mb-1" style="color: var(--spartan-gold)">
+                        Horario de Batalla
+                      </h6>
+                      <p class="mb-0">
+                        Lunes - Viernes: 8:00 - 23:00<br />Sábados: 9:00 - 23:00
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="mt-4 p-3"
+                    style="
+                      background: rgba(212, 175, 55, 0.1);
+                      border-radius: 15px;
+                      border-left: 4px solid var(--spartan-gold);
+                    "
+                  >
+                    <h6 style="color: var(--spartan-gold)">
+                      <i class="fas fa-rocket me-2"></i>Respuesta Rápida
+                    </h6>
+                    <p class="mb-0 small">
+                      Respondemos en menos de 2 horas durante horario laboral.
+                      Para emergencias críticas, contáctanos por WhatsApp.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="spartan-font mb-3" style="color: var(--spartan-gold);">
-                        <i class="fas fa-shield-alt me-2"></i>SPARTAN CODE MX
-                    </h5>
-                    <p class="mb-3">
-                        Forjando el futuro digital de México con la disciplina de los guerreros espartanos 
-                        y la innovación tecnológica más avanzada. Tu aliado en la conquista digital.
-                    </p>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fas fa-certificate text-warning me-2"></i>
-                        <small>Empresa Mexicana Certificada</small>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-award text-warning me-2"></i>
-                        <small>Calidad ISO 9001:2015</small>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <h6 class="spartan-font mb-3" style="color: var(--spartan-gold);">Arsenal</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#services" class="text-light text-decoration-none">Desarrollo Web</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Sistemas ERP</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Apps Móviles</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Automatización</a></li>
-                        <li><a href="#services" class="text-light text-decoration-none">Cloud Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <h6 class="spartan-font mb-3" style="color: var(--spartan-gold);">Compañía</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#about" class="text-light text-decoration-none">Nuestra Misión</a></li>
-                        <li><a href="#about" class="text-light text-decoration-none">Código Espartano</a></li>
-                        <li><a href="#contact" class="text-light text-decoration-none">Contacto</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Blog Técnico</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Casos de Éxito</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <h6 class="spartan-font mb-3" style="color: var(--spartan-gold);">Tecnologías</h6>
-                    <div class="d-flex flex-wrap gap-2">
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">React</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">Node.js</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">Python</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">AWS</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">Docker</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">MongoDB</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">Vue.js</span>
-                        <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--spartan-gold);">React Native</span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <h5 class="spartan-font mb-3" style="color: var(--spartan-gold)">
+              <i class="fas fa-shield-alt me-2"></i>SPARTAN CODE MX
+            </h5>
+            <p class="mb-3">
+              Forjando el futuro digital de México con la disciplina de los
+              guerreros espartanos y la innovación tecnológica más avanzada. Tu
+              aliado en la conquista digital.
+            </p>
+            <!-- <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-certificate text-warning me-2"></i>
+              <small>Empresa Mexicana Certificada</small>
+            </div> -->
+            <div class="d-flex align-items-center">
+              <i class="fas fa-award text-warning me-2"></i>
+              <small>Calidad ISO 9001:2015</small>
             </div>
-            
-            <!-- Social Media & Copyright -->
-            <div class="row align-items-center pt-4" style="border-top: 1px solid rgba(212, 175, 55, 0.2);">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-2">&copy; 2025 Spartan Code MX. Todos los derechos reservados.</p>
-                    <p class="mb-0 small text-muted">
-                        Hecho con <i class="fas fa-heart text-danger"></i> en México | 
-                        <a href="#" class="text-muted">Política de Privacidad</a> | 
-                        <a href="#" class="text-muted">Términos de Servicio</a>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <div class="social-links">
-                        <a href="#" class="social-icon" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-icon" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
+          </div>
+
+          <div
+            class="col-lg-2 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h6 class="spartan-font mb-3" style="color: var(--spartan-gold)">
+              Arsenal
+            </h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Sistemas ERP</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Apps Móviles</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Automatización</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Cloud Solutions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h6 class="spartan-font mb-3" style="color: var(--spartan-gold)">
+              Compañía
+            </h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#about" class="text-light text-decoration-none"
+                  >Nuestra Misión</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="text-light text-decoration-none"
+                  >Código Espartano</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-light text-decoration-none"
+                  >Contacto</a
+                >
+              </li>
+              <!-- <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Blog Técnico</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Casos de Éxito</a
+                >
+              </li> -->
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <h6 class="spartan-font mb-3" style="color: var(--spartan-gold)">
+              Tecnologías
+            </h6>
+            <div class="d-flex flex-wrap gap-2">
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >React</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >Node.js</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >Python</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >AWS</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >Docker</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >MongoDB</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >Vue.js</span
+              >
+              <span
+                class="badge"
+                style="
+                  background: rgba(212, 175, 55, 0.2);
+                  color: var(--spartan-gold);
+                "
+                >React Native</span
+              >
             </div>
+          </div>
         </div>
+
+        <!-- Social Media & Copyright -->
+        <div
+          class="row align-items-center pt-4"
+          style="border-top: 1px solid rgba(212, 175, 55, 0.2)"
+        >
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-2">
+              &copy; 2025 Spartan Code MX. Todos los derechos reservados.
+            </p>
+            <p class="mb-0 small">
+              Hecho con <i class="fas fa-heart text-danger"></i> en México
+              <!-- <a href="#" class="text-muted">Política de Privacidad</a> |
+              <a href="#" class="text-muted">Términos de Servicio</a> -->
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="social-links">
+              <a href="#" class="social-icon" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <!-- <a href="#" class="social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a> -->
+              <a href="#" class="social-icon" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+
     <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
+        });
+      });
+
+      // Active nav link highlighting
+      window.addEventListener("scroll", function () {
+        let current = "";
+        const sections = document.querySelectorAll("section[id]");
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
         });
 
-        // Active nav link highlighting
-        window.addEventListener('scroll', function() {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
+        document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
         });
+      });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Por favor, completa todos los campos requeridos.');
-                return;
-            }
-            
-            // Simulate form submission
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto, guerrero digital.');
-                this.reset();
-                button.innerHTML = originalText;
-                button.disabled = false;
-            }, 2000);
-        });
+      // Form submission handler
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            const speed = 0.5;
-            
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * speed}px)`;
-            }
-        });
+        // Get form data
+        const formData = new FormData(this);
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
 
-        // Add floating animation to service cards
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-        });
+        // Simple validation
+        if (!name || !email || !message) {
+          alert("Por favor, completa todos los campos requeridos.");
+          return;
+        }
 
-        // Easter egg: Konami code
-        let konamiCode = [];
-        const targetCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
-        
-        document.addEventListener('keydown', function(e) {
-            konamiCode.push(e.keyCode);
-            if (konamiCode.length > targetCode.length) {
-                konamiCode.shift();
-            }
-            
-            if (konamiCode.join(',') === targetCode.join(',')) {
-                // Easter egg activated
-                document.body.style.filter = 'hue-rotate(180deg)';
-                setTimeout(() => {
-                    document.body.style.filter = '';
-                    alert('🏛️ ¡Has encontrado el código secreto espartano! ⚔️');
-                }, 3000);
-                konamiCode = [];
-            }
-        });
-        
-        // Console easter egg
-        console.log(`
+        // Simulate form submission
+        const button = this.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
+        button.innerHTML =
+          '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
+        button.disabled = true;
+
+        setTimeout(() => {
+          alert(
+            "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto, guerrero digital."
+          );
+          this.reset();
+          button.innerHTML = originalText;
+          button.disabled = false;
+        }, 2000);
+      });
+
+      // Parallax effect for hero section
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector(".hero");
+        const speed = 0.5;
+
+        if (parallax) {
+          parallax.style.transform = `translateY(${scrolled * speed}px)`;
+        }
+      });
+
+      // Add floating animation to service cards
+      document.querySelectorAll(".service-card").forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+
+      // Easter egg: Konami code
+      let konamiCode = [];
+      const targetCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+
+      document.addEventListener("keydown", function (e) {
+        konamiCode.push(e.keyCode);
+        if (konamiCode.length > targetCode.length) {
+          konamiCode.shift();
+        }
+
+        if (konamiCode.join(",") === targetCode.join(",")) {
+          // Easter egg activated
+          document.body.style.filter = "hue-rotate(180deg)";
+          setTimeout(() => {
+            document.body.style.filter = "";
+            alert("🏛️ ¡Has encontrado el código secreto espartano! ⚔️");
+          }, 3000);
+          konamiCode = [];
+        }
+      });
+
+      // Console easter egg
+      console.log(`
         ⚔️ SPARTAN CODE MX ⚔️
         
         Μολὼν λαβέ (Molón labé)
@@ -1308,5 +1656,5 @@
         Envíanos un mensaje: info@spartancodemx.com
         `);
     </script>
-</body>
+  </body>
 </html>
